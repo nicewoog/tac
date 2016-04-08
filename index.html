@@ -7,72 +7,238 @@
     <!-- 위 3개의 메타 태그는 *반드시* head 태그의 처음에 와야합니다; 어떤 다른 콘텐츠들은 반드시 이 태그들 *다음에* 와야 합니다 -->
     <title>HTML5&CSS with Javascript</title>
 
-    <!-- 합쳐지고 최소화된 최신 CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="custom.css">
 
-    <!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js -->
-    <!-- WARNING: Respond.js 는 당신이 file:// 을 통해 페이지를 볼 때는 동작하지 않습니다. -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <style>
-      body {
-        padding-top: 50px;
-      }
-      .starter-template {
-        padding: 40px 15px;
-        text-align: center;
-      }
-      .TopSection{
-        text-align: left;
-      }
-    </style>
   </head>
   <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">TA Study Result</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+    <section id="section-base" class="section-base">
+      <div class="mainContainer">
+        <div class="baseTopic">
+          <h1>HTML5&CSS with Javascript(5day)</h1>
+          <p>기본적인 CSS 및 CSS를 활용한 애니메이션과 Viewport 및 미디어 쿼리를 활용하여 모바일 환경에서도 적절하게 표현되는 반응형 웹 구현하기. 이미 모르는 사람이 없을 정도로 유명한 Bootstrap을 이해하기 위한 내용이므로, 부트스트랩과 같은 CSS 프레임워크는 사용하지 않았다.</p>
+          <p>현재 페이지는 Viewport를 활용한 반응형 웹으로 만들어졌다. 아래 버튼은 반응형으로 좌우 margin을 적용하는 버튼입니다. 기본적인 원리는 미디어쿼리를 활용하여 화면 크기에 따라 CSS 클래스의 내용이 달라지게 되어 화면 크기에 따라 CSS 속성들이 적용된다.</p>
 
-    <div id="mainContainer" class="container">
-
-      <div class="starter-template">
-        <h1>HTML5&CSS with Javascript(5day)</h1>
-        <p class="lead">기본적인 CSS 및 CSS를 활용한 애니메이션과 Viewport 및 미디어 쿼리를 활용하여 모바일 환경에서도 적절하게 표현되는 반응형 웹 구현하기.</p>
-
-        <section class="TopSection">
-          <div class="row">
-            <div>
+          <div class="cssBtnGroup">
+            <input id="introBtnAdd" class="btnCenter" type="button" value="CSS적용">
+            <input id="introBtnRemove" class="btnCenter" type="button" value="CSS제거">
           </div>
-        </section>
+
+          <div class="sectionDiv">
+            <section class="articleSection">
+              <h1>CSS 적용시키기</h1>
+              <p class="descP">
+                 기본적으로 CSS는 스타일태그(style) 안에 정의하여 사용할 수 있다. 보통은 Head태그 안에 태그를 만들어 사용하거나 외부에 CSS 파일을 생성하여 코딩을 한 후 파일을 읽어오는 방식으로 사용된다.
+              </p>
+              <div class="cssBox">
+                <div class="cssBoxDesc">
+                  <h3>태그활용</h3>
+                  <xmp>
+      <style>
+        body {
+          background-color: #3984EE;
+        }
+        .TopSection{
+          text-align: left;
+        }
+        .btnCenter{
+          text-align: center;
+        }
+        #sectionDiv {
+          border: 2px solid grey;
+          border-radius: 4px;
+          margin: 1% 1%;
+        }
+      </style>
+                  </xmp>
+                </div>
+                <div class="cssBoxDesc">
+                  <h3>외부 CSS 파일 활용</h3>
+                  <xmp>
+      css/custom.css 가 있다고 가정
+
+      <!doctype html>
+      <html>
+      <head>
+        <link rel="stylesheet" src="css/custm.css">
+      </head>
+      <body>
+      </body>
+      </html>
+                  </xmp>
+                </div>
+              </div>
+              <br><br>
+              <h1>선택자(Selector)</h1>
+              <p class="descP">
+                 CSS코드를 보면 코드의 속성(Attribute)를 정의하기 전에 body, .TopSection, #sectionDiv 등의 이름이 활용된 것을 볼 수 있다. 점(.)은 클래스(class)를 의미하고 우물정자(#)는 태그의 이름(name)을 의미한다.
+                즉, 점이나 우물정자 없이 정의하면 태그에 직접 CSS 속성을 정의하게 되고 특정 태그 안에 class를 정의하여 활용하는 경우는 태그의 클래스 속성의 명칭(ClassName)을 .ClassName{} 과같은 형식으로 정의하여 사용할 수 있다.
+                Class를 활용할 때의 장점은 같은 내용의 CSS 속성을 여러 번 반복적으로 사용할 수 있다는 것이다. 즉 프로그래밍 언어의 함수처럼 여러 번 호출되어도 무방하다는 뜻이다. 단점이라고 한다면, 적용되는 태그가 많아지면 일일히
+                지정해야 하는 번거로움이 생긴다는 것 정도이다.
+              </p>
+            </section>
+          </div>
+          <div class="sectionDiv">
+            <section class="articleSection">
+              <!-- <aside>
+                <h1>aside area</h1>
+              </aside> -->
+              <h1>테이블 형식으로 Div표현하기</h1>
+              <p class="descP">반응형으로 각각 설정해둔 CSS 클래스를 적용시킴으로써 아래의 div 덩어리를 테이블처럼 표현하는 것이 가능하다.
+                첫째로, <span class="classSpan">cssBox</span> 클래스에서는 <span class="attrSpan">[display:table]</span> 속성을 적용시키고, <span class="classSpan">innerDivRow</span> 클래스는 <span class="attrSpan">[display:table-row]</span> 끝으로 <span class="classSpan">innerDivCell</span> 클래스의 경우는
+                <span class="attrSpan">[display:table-cell]</span>을 적용시키면 행과 열로 나누어진 테이블을 div 태그만으로 표현이 가능하다.<br><br>
+                현재 반응형으로 스타일을 각각 적용시켜두었기 때문에 PC 화면에서는 2열 4행의 테이블로 보일테지만, 모바일 기기에서는 두서없이 1렬로 나열댄
+                div 태그로 보일것이다.
+              </p>
+              <div>
+                <xmp>
+      <div class="cssBox">
+        <div class="innerDivRow">
+          <div class="innerDivCell">row#1 div#1</div>
+          <div class="innerDivCell">row#1 div#2</div>
+          <div class="innerDivCell">row#1 div#3</div>
+          <div class="innerDivCell">row#1 div#3</div>
+        </div>
+        <div class="innerDivRow">
+          <div class="innerDivCell">row#2 div#1</div>
+          <div class="innerDivCell">row#2 div#2</div>
+          <div class="innerDivCell">row#2 div#3</div>
+          <div class="innerDivCell">row#2 div#3</div>
+        </div>
+      </div>
+                </xmp>
+              </div>
+              <div class="cssBox">
+                <div class="innerDivRow">
+                  <div class="innerDivCell">row#1 div#1</div>
+                  <div class="innerDivCell">row#1 div#2</div>
+                  <div class="innerDivCell">row#1 div#3</div>
+                  <div class="innerDivCell">row#1 div#3</div>
+                </div>
+                <div class="innerDivRow">
+                  <div class="innerDivCell">row#2 div#1</div>
+                  <div class="innerDivCell">row#2 div#2</div>
+                  <div class="innerDivCell">row#2 div#3</div>
+                  <div class="innerDivCell">row#2 div#3</div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <br><br>
+          <div class="sectionDiv">
+            <section class="articleSection">
+              <h1>네비게이션바(navbar) 만들기</h1>
+              <div class="cssBox">
+                <div class="navbar">
+                  <ul>
+                    <li><a>Home</a></li>
+                    <li><a>News</a></li>
+                    <li><a>Contact</a></li>
+                    <li><a>About</a></li>
+                  </ul>
+                </div>
+              </div>
+              <p class="descP">
+                원리는 위의 테이블과 유사하지만 테이블 스타일을 활용하지 않고 float속성을 활용한 예이다. ul태그와 li태그에 스타일을 적용하여 표현이 가능하다. 먼저 ul태그에
+                <span class="attrSpan">list-style-type: none</span> 속성을 적용시켜 기존 li태그에 나타나는 점을 없애고, <span class="attrSpan">overflow: hidden</span> 속성으로
+                혹시나 태그 밖으로 넘치게 표현되는 것들을 화면상에 나타나지 않도록한다.(미적용시 배경색 적용X) 그 다음 li태그에 <span class="attrSpan">float:left</span> 속성을 적용시켜 최대 넓이를 넘지
+                않는 선에서 좌측부터 차례대로 나열되도록 한다.
+              </p>
+              <div class="cssBox">
+                <div class="cssBoxDesc">
+                  <h3>HTML</h3>
+                  <xmp>
+      <div class="navbar">
+        <ul>
+          <li><a>Home</a></li>
+          <li><a>News</a></li>
+          <li><a>Contact</a></li>
+          <li><a>About</a></li>
+        </ul>
+      </div>
+                  </xmp>
+                  </div>
+                  <h3>CSS</h3>
+                  <div class="descXmpDiv">
+                  <xmp>
+        .navbar ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #333;
+        }
+        .navbar li {
+          float: left;
+          width: 25%;
+        }
+        .navbar li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          cursor: pointer;
+        }
+                  </xmp>
+                </div>
+              </div>
+
+              <br><br>
+
+              <h1>CSS hover</h1>
+              <p class="descP">
+                MouseOver(마우스오버)효과로 해당 목록에 마우스를 가져다 댄 경우 색이 변하는 것을 확인할 수 있다. 이 경우엔 <span class="classSpan">태그명:hover{<span class="attrSpan">background-color: 색상</span>}</span>
+                으로 원하는 색상으로 마우스오버시 색상을 변경하는 것이 가능하다.
+              </p>
+
+            </section>
+          </div>
+        </div>
+      </div>
+      <div id="nodeContainer" class="mainContainer">
+        nodeContainer
       </div>
 
-    </div><!-- /.container -->
+    </section>
+
     <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
     <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> -->
     <script>
+      var summonerName = '화접리'
+      var summonerID
+      var keyValue = '8823f494-295a-494a-a563-544425c2a518'
       $(document).ready(function(){
-        console.log('aaa')
+
+        var url = 'https://kr.api.pvp.net/api/lol/kr/v1.4/summoner/by-name/' + summonerName + '?api_key='+ keyValue
+        $.ajax({
+            url: url,
+            type:'get',
+            success:function(data){
+              summonerID = data[summonerName]['id'];
+              console.log(summonerID);
+            }
+        });
+
+        $.ajax({
+            url: 'http://localhost:3000/node',
+            type: 'get',
+            success:function(data){
+              $('#nodeContainer').html(data);
+              console.dir(data);
+            }
+        })
+      });
+
+      $('#introBtnAdd').click(function(){
+        $('#section-base').removeClass();
+        $('#section-base').addClass('section-base');
+      });
+
+      $('#introBtnRemove').click(function(){
+        $('#section-base').removeClass();
       });
     </script>
   </body>

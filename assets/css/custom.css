@@ -1,0 +1,196 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'Noto Sans Korean';
+    src: url(//i1.daumcdn.net/cfs.tistory/static/font/notokr-regular.woff2) format('woff2'),
+    url(//i1.daumcdn.net/cfs.tistory/static/font/notokr-regular.woff) format('woff');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Noto Sans Korean';
+  font-style: normal;
+  font-weight: 500;
+  src: url(https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/fonts/eot/NotoSansKR-Medium-Hestia.eot);
+  src: url(https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/fonts/eot/NotoSansKR-Medium-Hestia.eot?#iefix) format('embedded-opentype'),
+    url(https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/fonts/woff/NotoSansKR-Medium-Hestia.woff) format('woff'),
+    url(https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/fonts/otf/NotoSansKR-Medium-Hestia.otf) format('opentype');
+}
+body {
+  background-color: #3984EE;
+}
+.TopSection{
+  text-align: left;
+}
+.btnCenter{
+  text-align: center;
+}
+.sectionDiv {
+  border: 2px solid grey;
+  border-radius: 4px;
+  margin: 1% 1%;
+}
+.cssBtnGroup {
+  margin: 20px;
+}
+.cssBtnGroup input{
+  border-radius: 4px;
+}
+p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.cssBox{
+  margin: 1%;
+  padding: 1%;
+  border: 2px solid skyblue;
+  border-radius: 4px;
+  width: 95%;
+}
+.articleSection{
+  width: 100%;
+}
+.descP{
+  text-align: left;
+}
+.classSpan{
+  font-weight: bolder;
+  font-style: italic;
+  color: red;
+}
+.attrSpan{
+  font-weight: bolder;
+  font-style: normal;
+  color: blue;
+}
+.cssBoxDesc{
+  float: left;
+  width:49.5%;
+}
+xmp {
+  text-align: left;
+  overflow: hidden;
+}
+cssBoxDesc h3 {
+  border-bottom: 2px solid black;
+}
+@media screen and (min-width:787px) {
+
+  .nav-base {
+    float: left;
+    width: 25%;
+  }
+  .section-base {
+    margin-left: 15%;
+    margin-right: 15%;
+
+  }
+  .mainContainer{
+    margin: 20px;
+    border: 2px solid black;
+    text-align: center;
+    background-color: #E8F2FF;
+  }
+  .TopSection{
+    border: 2px solid black
+  }
+  .cssBox{
+    display: table;
+  }
+  .innerDivRow{
+    display: table-row;
+    border: 10px solid green;
+  }
+  .innerDivCell {
+    display: table-cell;
+    border: 1px solid blue;
+  }
+
+  aside{
+    margin: 5px;
+    float: left;
+    position: relative;
+  }
+
+  article {
+    margin: 5px;
+  }
+  h1 {
+    text-decoration: underline;
+    /*font-size: 20px;*/
+  }
+  .navbar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  .navbar li{
+    float: left;
+    width: 25%;
+  }
+  .navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .navbar li a:hover {
+    background-color: #111;
+  }
+}
+
+@media screen and (max-width:786px) {
+  .nav-base li {
+    display: inline;
+  }
+
+  .mainContainer, .nodeContainer{
+    margin: 10px;
+    border: 2px solid blue;
+    text-align: center;
+    background-color: #E8F2FF;
+  }
+  .TopSection{
+    border: 2px solid blue;
+  }
+  h1 {
+    text-decoration: underline;
+    /*font-size: 15px;*/
+  }
+  .cssBox{
+    display: table;
+  }
+  .innerDivCell{
+    width: 100%;
+    border: 1px solid blue;
+  }
+  .navbar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  .navbar li{
+    float: left;
+    width: 25%;
+  }
+  .navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .navbar li a:hover {
+    background-color: #111;
+  }
+  .cssBoxDesc{
+    width: 100%;
+  }
+}
