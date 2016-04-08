@@ -68,7 +68,7 @@
                 </div>
               </div>
               <br><br>
-              <h1>선택자(Selector)</h1>
+              <h1>참고 : 선택자(Selector)</h1>
               <p class="descP">
                  CSS코드를 보면 코드의 속성(Attribute)를 정의하기 전에 body, .TopSection, #sectionDiv 등의 이름이 활용된 것을 볼 수 있다. 점(.)은 클래스(class)를 의미하고 우물정자(#)는 태그의 이름(name)을 의미한다.
                 즉, 점이나 우물정자 없이 정의하면 태그에 직접 CSS 속성을 정의하게 되고 특정 태그 안에 class를 정의하여 활용하는 경우는 태그의 클래스 속성의 명칭(ClassName)을 .ClassName{} 과같은 형식으로 정의하여 사용할 수 있다.
@@ -156,10 +156,11 @@
         </ul>
       </div>
                   </xmp>
-                  </div>
+                </div>
+                <div class="cssBoxDesc">
                   <h3>CSS</h3>
                   <div class="descXmpDiv">
-                  <xmp>
+                    <xmp>
         .navbar ul {
           list-style-type: none;
           margin: 0;
@@ -179,13 +180,14 @@
           text-decoration: none;
           cursor: pointer;
         }
-                  </xmp>
+                    </xmp>
+                  </div>
                 </div>
               </div>
 
               <br><br>
 
-              <h1>CSS hover</h1>
+              <h1>참고 : CSS hover</h1>
               <p class="descP">
                 MouseOver(마우스오버)효과로 해당 목록에 마우스를 가져다 댄 경우 색이 변하는 것을 확인할 수 있다. 이 경우엔 <span class="classSpan">태그명:hover{<span class="attrSpan">background-color: 색상</span>}</span>
                 으로 원하는 색상으로 마우스오버시 색상을 변경하는 것이 가능하다.
@@ -199,8 +201,13 @@
         nodeContainer
       </div>
 
+      <div id="lolDev" class="mainContainer">
+        lolDevContainer
+      </div>
+
     </section>
 
+    <script src="jquery-2.2.3.min.js"></script>
     <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
@@ -218,16 +225,16 @@
             type:'get',
             success:function(data){
               summonerID = data[summonerName]['id'];
-              console.log(summonerID);
+              $('#lolDev').html(JSON.stringify(data));
             }
         });
 
         $.ajax({
-            url: 'http://localhost:3000/node',
+            url: 'http://localhost:3000/getContentAjax',
             type: 'get',
             success:function(data){
-              $('#nodeContainer').html(data);
-              console.dir(data);
+              var content = JSON.parse(data);
+              $('#nodeContainer').html(content['nodeHtml']);
             }
         })
       });

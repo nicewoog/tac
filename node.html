@@ -1,8 +1,63 @@
 
 <div class="baseTopic">
   <h1>Nodejs 서버 시작하기</h1>
-  <p>지근 보여지는 페이지는 jquery ajax를 통해 서버에서 받아온 html 데이터를 표시한다. 앞서 언급한 서버는 Node서버를 의미하며, 어떻게 서버를 작동시켰는지 설명하고자 한다.</p>
+  <p>지금 보여지는 페이지는 jquery ajax를 통해 서버에서 받아온 html 데이터를 표시한다. 앞서 언급한 서버는 Node서버를 의미하며, 어떻게 서버를 작동시켰는지 설명하고자 한다.</p>
 
   <div class="sectionDiv">
     <section class="articleSection">
+      <h1>Node 설치하기</h1>
+      <p class="descP">
+        &nbsp;<a href="https://nodejs.org/ko/">NodeJS 홈페이지</a>에서 프로그램을 다운로드 받아 설치하도록 한다. 현재(2016년4월)의 경우 <span class="classSpan">v.4.4.2 LTS 버전</span> 혹은 <span class="classSpan">v.5.10.1 안정 버전</span>이 있는데 나는 후자를 선택하여 설치하였다.
+        설치를 마친 이후에는 CMD창에 명령어를 입력하여 서버를 실행시킬 수 있다.
+      </p>
+      <div class="cssBox">
+        <div class="cssBoxDesc">
+          <img src="NodejsHome.png">
+        </div>
+      </div>
+
+      <br><br>
+
+    </section>
+    <section class="articleSection">
+      <h1>Node 서버 준비하기</h1>
+      <p class="descP">
+        &nbsp;내용의 결론부터 말하자면, 사실 기본적으로 서버를 구축하는 것 외에도 사용되는 것들이 있다. express, fs, path 모듈이다. 여기서 모듈이란 노드에서 활용되는 일종의 프로그램이라 할 수 있다. 각각의 기능과 역할은 저마다 다르고 다양하다. 서버를 구축하는데에 필요한 모듈은 사실 html
+        모듈이다. 다음에 소개될 코드에서는 express 모듈이 html모듈의 기능을 포함하고 있다고 이해해 두도록 하자. fs모듈은 FileSystem모듈로 이름에서 알 수 있듯이 서버에 저장되어있는 파일에 접근하는 기능을 제공하는 모듈이다. path도 이름에서 알 수 있듯이 경로를 설정하는 일단 모듈이라고
+        생각하면 된다.
+      </p>
+      <div class="cssBoxPC">
+        <div class="cssBoxDescPC">
+          <img src="ServerCode.png">
+          <br>
+          <p class="descP">
+            &nbsp;여기서 눈여겨 볼 부분은 app.get(~~~)부분이다. 익히 알고있는 get방식과 post방식에 대한 것으로 get이라는 함수에 2개에 인자가 있는 것을 알 수 있다. 첫 번째 인자값은 url이다. 서버에 어떤 요청이 왔는지 url에 따라 처리한다. 두 번째 인자는 콜백함수로 데이터를 처리하는데
+            사용된다. 현재 페이지의 경우 간단히 Response(res)객체에 클라이언트가 보게될 페이지를 전달하는 역할을 수행하고 있다.
+          </p>
+          <p>파일 이름은 <span class="attrSpan">app.js</span>로 저장하였다.</p>
+        </div>
+      </div>
+    </section>
+    <section class="articleSection">
+      <h1>모듈 설치 및 서버의 실행</h1>
+      <p class="descP">
+        사실 모듈의 설치는 위에 있는 내용을 코딩하는 것보다 선행되어야 한다. 무작정 설치하는 것보다는 간단히 express 모듈을 사용한 코드를 보는게 좋을것 같아 코드의 내용을 먼저 실었다. 모듈의 설치는 npm(Node Package Manager)를 통해 설치할 수 있다. 명령차에서 간단한 명령어를 입력하는
+        것만으로도 손쉽게 설치가 되고, app.js파일에서 require('모듈이름')으로 더욱 직관적으로 모듈을 사용하는 것이 가능하다.
+      </p>
+      <div class="cssBoxPC">
+        <div class="cssBoxDescPC">
+          <img src="npmFS.png">
+        </div>
+        <p class="descP">
+          위와 같이 간단하게 fs모듈이 설치되는 것을 볼 수 있다. express 및 path 모듈도 동일한 방식으로 설치한다.
+        </p>
+        <div class="cssBoxDescPC">
+          <img src="ExecuteNode.png">
+        </div>
+        <p class="descP">
+          간단히 서버가 실행되고 클라이언트가 접속되는 경우 난 위와 같이 execute라는 문구가 나온다.
+        </p>
+      </div>
+    </section>
+  </div>
 </div>
