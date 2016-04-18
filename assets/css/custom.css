@@ -18,6 +18,7 @@
 }
 body {
   background-color: #3984EE;
+  word-break:break-all;
 }
 .TopSection{
   text-align: left;
@@ -47,8 +48,19 @@ p {
   border-radius: 4px;
   width: 95%;
 }
+.cssBoxPC{
+  margin: 1%;
+  padding: 1%;
+  border: 2px solid skyblue;
+  border-radius: 4px;
+  width: 95%;
+}
 .articleSection{
   width: 100%;
+}
+.articleSection h1 {
+  text-decoration: none;
+  font-size: 1.4em;
 }
 .descP{
   text-align: left;
@@ -63,17 +75,30 @@ p {
   font-style: normal;
   color: blue;
 }
-.cssBoxDesc{
+.cssBoxDesc {
   float: left;
   width:49.5%;
+}
+.cssBoxDesc h3 {
+  margin: 5px 5px;
+  border-bottom: 2px solid black;
+}
+.cssBoxDescPC {
+  width: 100%;
+}
+.cssBoxDescPC canvas {
+  width: 90%;
 }
 xmp {
   text-align: left;
   overflow: hidden;
 }
-cssBoxDesc h3 {
-  border-bottom: 2px solid black;
+.canvas01 {
+  margin: 5%;
+  border: 2px solid black;
+  border-radius: 4px;
 }
+
 @media screen and (min-width:787px) {
 
   .nav-base {
@@ -96,6 +121,9 @@ cssBoxDesc h3 {
   }
   .cssBox{
     display: table;
+  }
+  .cssBoxPC{
+    display: block;
   }
   .innerDivRow{
     display: table-row;
@@ -140,6 +168,46 @@ cssBoxDesc h3 {
   }
   .navbar li a:hover {
     background-color: #111;
+  }
+  .cssBoxDesc img{
+    width: 200%;
+  }
+  .cssBoxDescPC img {
+    width: 100%;
+  }
+  .exTransition{
+    margin: 5%;
+    width: 50px;
+    height: 50px;
+    transition: 2.0s;
+    background-color: red;
+  }
+  .exTransition:hover{
+    width: 90%;
+  }
+  .exAnimation{
+    width: 100%;
+  }
+  .exAnimation img {
+    margin-top: 20px;
+    width: 50%;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+  }
+  @-moz-keyframes spin {
+    100% { -moz-transform: rotate(360deg); }
+  }
+  @-webkit-keyframes spin {
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  @keyframes spin {
+    100% {
+      transform:rotate(360deg);
+    }
+  }
+  .canvas01 {
+    width: 100%;
   }
 }
 
@@ -192,5 +260,45 @@ cssBoxDesc h3 {
   }
   .cssBoxDesc{
     width: 100%;
+  }
+  .cssBoxDesc img{
+    width: 100%;
+  }
+  .cssBoxDescPC img {
+    width: 100%;
+  }
+  .exTransition{
+    margin: 5%;
+    width: 50px;
+    height: 50px;
+    transition: 2.0s;
+    background-color: red;
+  }
+  .exTransition:hover{
+    width: 90%;
+  }
+  .exAnimation{
+    width: 100%;
+  }
+  .exAnimation img {
+    width: 50%;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+  }
+  @-moz-keyframes spin {
+    100% { -moz-transform: rotate(360deg); }
+  }
+  @-webkit-keyframes spin {
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  @keyframes spin {
+    100% {
+      transform:rotate(360deg);
+    }
+  }
+  .canvas01 {
+    margin:1%;
+    width:98%;
   }
 }
